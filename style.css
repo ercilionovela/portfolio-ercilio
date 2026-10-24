@@ -677,16 +677,31 @@ a {
     overflow: hidden;
 
     background: #ddd;
+
+    cursor: pointer;
+
+    /* Centraliza a imagem dentro do quadro */
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
 }
+
 
 
 .project-image img {
 
-    width: 100%;
+    width: 94%;
 
-    height: 100%;
+    height: 94%;
 
     object-fit: cover;
+
+    /* Garante que o corte fica centrado */
+
+    object-position: center;
 
     display: block;
 
@@ -843,6 +858,523 @@ a {
     font-size: 14px;
 }
 
+
+
+/* =========================================================
+   TEMPLATES (JANELA DE MODELOS)
+
+   Grelha de cartões com pré-visualização.
+   Cada cartão permite VISUALIZAR (lightbox)
+   e BAIXAR o modelo.
+========================================================= */
+
+.templates-section {
+
+    background: var(--cor-fundo);
+
+}
+
+
+.templates-intro {
+
+    max-width: 640px;
+
+    color: var(--cor-cinza);
+
+    margin: -30px 0 50px;
+
+    font-size: 16px;
+
+    line-height: 1.8;
+
+}
+
+
+.templates-grid {
+
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 25px;
+
+}
+
+
+/* CARTÃO DE TEMPLATE */
+
+.template-card {
+
+    background: var(--cor-branca);
+
+    border: 1px solid var(--cor-clara);
+
+    border-radius: 12px;
+
+    overflow: hidden;
+
+    transition:
+        transform 0.4s ease,
+        box-shadow 0.4s ease;
+
+}
+
+
+.template-card:hover {
+
+    transform: translateY(-10px);
+
+    box-shadow: 0 20px 40px rgba(15, 40, 68, 0.15);
+
+}
+
+
+/* PRÉ-VISUALIZAÇÃO — moldura tipo "papel" */
+
+.template-preview {
+
+    position: relative;
+
+    height: 260px;
+
+    overflow: hidden;
+
+    background:
+        repeating-linear-gradient(
+            45deg,
+            #f0ede8,
+            #f0ede8 10px,
+            #e8e4de 10px,
+            #e8e4de 20px
+        );
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    cursor: pointer;
+
+}
+
+
+.template-preview img {
+
+    max-width: 92%;
+
+    max-height: 92%;
+
+    object-fit: contain;
+
+    display: block;
+
+    background: white;
+
+    border: 1px solid var(--cor-clara);
+
+    box-shadow: 0 8px 24px rgba(15, 40, 68, 0.18);
+
+    transition: transform 0.6s ease;
+
+}
+
+
+.template-card:hover .template-preview img {
+
+    transform: scale(1.06);
+
+}
+
+
+/* INFORMAÇÕES DO TEMPLATE */
+
+.template-info {
+
+    padding: 25px;
+
+}
+
+
+.template-info span {
+
+    color: var(--cor-principal);
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    letter-spacing: 2px;
+
+}
+
+
+.template-info h3 {
+
+    font-size: 22px;
+
+    margin: 12px 0;
+
+}
+
+
+.template-info p {
+
+    color: var(--cor-cinza);
+
+    font-size: 14px;
+
+    line-height: 1.7;
+
+    margin-bottom: 20px;
+
+}
+
+
+/* ESCOLHA DO TAMANHO DA FOLHA — INTEGRADA NO BOTÃO BAIXAR */
+
+.baixar-wrap {
+
+    position: relative;
+
+    display: inline-flex;
+
+    transition: transform 0.3s ease;
+
+}
+
+
+.baixar-wrap:hover {
+
+    transform: translateY(-3px);
+
+}
+
+
+.baixar-wrap.menu-aberto {
+
+    transform: none;
+
+}
+
+
+.baixar-wrap .baixar-template {
+
+    border-right: 0;
+
+    border-top-right-radius: 0;
+
+    border-bottom-right-radius: 0;
+
+    padding-right: 12px;
+
+}
+
+
+.baixar-wrap .baixar-template:hover {
+
+    transform: none;
+
+}
+
+
+/* Etiqueta com a folha escolhida, dentro do botão */
+
+.baixar-folha {
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    letter-spacing: 0.5px;
+
+    padding: 2px 6px;
+
+    border-radius: 3px;
+
+    background: rgba(15, 40, 68, 0.12);
+
+}
+
+
+.baixar-template:hover .baixar-folha,
+
+.baixar-wrap.menu-aberto .baixar-folha {
+
+    background: rgba(255, 255, 255, 0.22);
+
+}
+
+
+/* Seta que abre o menu de tamanhos */
+
+.baixar-toggle {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    min-width: 40px;
+
+    padding: 0 8px;
+
+    background: transparent;
+
+    color: var(--cor-navy);
+
+    border: 1px solid var(--cor-navy);
+
+    border-left: 1px solid rgba(15, 40, 68, 0.3);
+
+    border-radius: 0 5px 5px 0;
+
+    cursor: pointer;
+
+    transition: 0.3s ease;
+
+    touch-action: manipulation;
+
+}
+
+
+.baixar-toggle:hover,
+
+.baixar-wrap.menu-aberto .baixar-toggle {
+
+    background: var(--cor-navy);
+
+    color: white;
+
+}
+
+
+.baixar-wrap.menu-aberto .baixar-template {
+
+    background: var(--cor-navy);
+
+    color: white;
+
+}
+
+
+/* Menu de tamanhos — abre por cima, dentro do cartão */
+
+.baixar-menu {
+
+    position: absolute;
+
+    right: 0;
+
+    bottom: calc(100% + 8px);
+
+    min-width: 170px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 2px;
+
+    padding: 6px;
+
+    background: var(--cor-branca);
+
+    border: 1px solid var(--cor-clara);
+
+    border-radius: 8px;
+
+    box-shadow: 0 14px 34px rgba(15, 40, 68, 0.2);
+
+    z-index: 20;
+
+}
+
+
+.baixar-menu[hidden] {
+
+    display: none;
+
+}
+
+
+.baixar-menu-titulo {
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    letter-spacing: 2px;
+
+    text-transform: uppercase;
+
+    color: var(--cor-cinza);
+
+    padding: 6px 8px 4px;
+
+}
+
+
+.baixar-opcao {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 14px;
+
+    font-family: inherit;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    color: var(--cor-navy);
+
+    background: transparent;
+
+    border: 0;
+
+    border-radius: 5px;
+
+    padding: 10px 14px;
+
+    cursor: pointer;
+
+    text-align: left;
+
+    touch-action: manipulation;
+
+    transition: background 0.2s ease;
+
+}
+
+
+.baixar-opcao:hover {
+
+    background: var(--cor-fundo);
+
+}
+
+
+.baixar-opcao[aria-checked="true"] {
+
+    background: rgba(180, 122, 61, 0.14);
+
+}
+
+
+.baixar-opcao small {
+
+    font-size: 11px;
+
+    font-weight: 500;
+
+    color: var(--cor-cinza);
+
+}
+
+
+/* Aviso quando um tamanho não pode ser gerado */
+
+.sheet-aviso {
+
+    flex-basis: 100%;
+
+    font-size: 11px;
+
+    line-height: 1.5;
+
+    color: var(--cor-cinza);
+
+}
+
+
+/* BOTÕES VISUALIZAR / BAIXAR */
+
+.template-actions {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    flex-wrap: wrap;
+
+}
+
+
+.btn-template {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 8px;
+
+    padding: 10px 18px;
+
+    border-radius: 5px;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    font-family: inherit;
+
+    cursor: pointer;
+
+    border: 1px solid transparent;
+
+    transition: 0.3s ease;
+
+}
+
+
+.visualizar-template {
+
+    background: var(--cor-navy);
+
+    color: white;
+
+}
+
+
+.visualizar-template:hover {
+
+    background: var(--cor-secundaria);
+
+    transform: translateY(-3px);
+
+}
+
+
+.baixar-template {
+
+    background: transparent;
+
+    border-color: var(--cor-navy);
+
+    color: var(--cor-navy);
+
+}
+
+
+.baixar-template:hover {
+
+    background: var(--cor-navy);
+
+    color: white;
+
+    transform: translateY(-3px);
+
+}
 
 
 /* =========================================================
@@ -1136,6 +1668,12 @@ button:focus-visible {
     opacity: 0;
     transition: opacity 0.4s ease;
     pointer-events: none;
+}
+
+
+/* Overlay "Ver detalhe" também no hover do preview dos templates */
+.template-preview:hover .image-overlay {
+    opacity: 1;
 }
 
 .project-card:hover .image-overlay,
@@ -1469,6 +2007,13 @@ button:focus-visible {
     }
 
 
+    .templates-grid {
+
+        grid-template-columns: repeat(2, 1fr);
+
+    }
+
+
     .skills-grid {
 
         grid-template-columns: repeat(2, 1fr);
@@ -1733,6 +2278,55 @@ button:focus-visible {
     }
 
 
+    /* Templates em cartão único */
+    .templates-grid {
+
+        grid-template-columns: 1fr;
+
+        gap: 16px;
+
+    }
+
+
+    .templates-intro {
+
+        font-size: 15px;
+
+        margin: -20px 0 32px;
+
+    }
+
+
+    /* Botões do template ocupam a largura no telemóvel */
+    .template-actions .btn-template {
+
+        flex: 1;
+
+    }
+
+
+    /* Grupo "Baixar + folha" ocupa a largura toda */
+    .template-actions .baixar-wrap {
+
+        flex: 1;
+
+    }
+
+
+    /* Menu de folhas alinhado à largura do botão */
+    .baixar-menu {
+
+        left: 0;
+
+        right: auto;
+
+        width: 100%;
+
+        min-width: 0;
+
+    }
+
+
     /* Competências em cartão único */
     .skills-grid {
 
@@ -1910,7 +2504,8 @@ button:focus-visible {
     /* Feedback ao tocar nos botões */
 
     .btn:active,
-    .social-btn:active {
+    .social-btn:active,
+    .btn-template:active {
 
         transform: scale(0.96);
 
@@ -1920,7 +2515,8 @@ button:focus-visible {
     /* Feedback ao tocar nos cartões */
 
     .project-card:active,
-    .skill-card:active {
+    .skill-card:active,
+    .template-card:active {
 
         transform: scale(0.98);
 

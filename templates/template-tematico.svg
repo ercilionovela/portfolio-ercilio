@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="1130" viewBox="0 0 800 1130" font-family="Georgia, 'Times New Roman', serif">
+  <!-- Modelo: Mapa Temático (coropletes, A4 vertical) -->
+  <rect width="800" height="1130" fill="#faf9f7"/>
+  <rect x="30" y="30" width="740" height="1020" fill="#ffffff" stroke="#1e3a5f" stroke-width="3"/>
+  <rect x="42" y="42" width="716" height="996" fill="none" stroke="#1e3a5f" stroke-width="1"/>
+
+  <text x="400" y="105" text-anchor="middle" font-size="34" font-weight="bold" fill="#0f2844" letter-spacing="2">MAPA TEMÁTICO</text>
+  <line x1="200" y1="125" x2="600" y2="125" stroke="#b47a3d" stroke-width="3"/>
+  <text x="400" y="155" text-anchor="middle" font-size="15" fill="#5a6270">[Título do tema] — [Área de estudo]</text>
+
+  <!-- Área do mapa com classes de cor -->
+  <rect x="70" y="200" width="660" height="620" fill="#ffffff" stroke="#0f2844" stroke-width="2"/>
+  <polygon points="110,240 280,220 320,360 160,400" fill="#b47a3d"/>
+  <polygon points="280,220 460,230 500,340 320,360" fill="#d9b28a"/>
+  <polygon points="460,230 700,250 690,420 500,340" fill="#f0e3d3"/>
+  <polygon points="160,400 320,360 500,340 540,560 300,640 130,580" fill="#c4885b"/>
+  <polygon points="540,560 690,420 700,640 600,760 420,740" fill="#e8d5c0"/>
+  <polygon points="130,580 300,640 420,740 200,780 100,700" fill="#8f5f2e"/>
+
+  <!-- Legenda de classes -->
+  <rect x="90" y="230" width="170" height="200" fill="#ffffff" stroke="#0f2844" stroke-width="1.5"/>
+  <rect x="90" y="230" width="170" height="30" fill="#0f2844"/>
+  <text x="175" y="250" text-anchor="middle" font-size="13" font-weight="bold" fill="#ffffff">LEGENDA</text>
+  <rect x="102" y="278" width="20" height="14" fill="#8f5f2e"/>
+  <text x="132" y="290" font-size="11" fill="#171717" font-family="Arial">Muito alto</text>
+  <rect x="102" y="308" width="20" height="14" fill="#b47a3d"/>
+  <text x="132" y="320" font-size="11" fill="#171717" font-family="Arial">Alto</text>
+  <rect x="102" y="338" width="20" height="14" fill="#d9b28a"/>
+  <text x="132" y="350" font-size="11" fill="#171717" font-family="Arial">Médio</text>
+  <rect x="102" y="368" width="20" height="14" fill="#f0e3d3"/>
+  <text x="132" y="380" font-size="11" fill="#171717" font-family="Arial">Baixo</text>
+
+  <!-- Rosa dos ventos -->
+  <g transform="translate(690,270)">
+    <circle r="30" fill="#ffffff" stroke="#0f2844" stroke-width="1.5"/>
+    <path d="M0 -25 L6 0 L0 7 L-6 0 Z" fill="#0f2844"/>
+    <text y="-35" text-anchor="middle" font-size="15" font-weight="bold" fill="#0f2844">N</text>
+  </g>
+
+  <!-- Escala gráfica -->
+  <g transform="translate(560,850)">
+    <rect width="35" height="8" fill="#0f2844"/>
+    <rect x="35" width="35" height="8" fill="#ffffff" stroke="#0f2844"/>
+    <rect x="70" width="35" height="8" fill="#0f2844"/>
+    <text y="24" font-size="11" fill="#171717" font-family="Arial">0</text>
+    <text x="105" y="24" font-size="11" text-anchor="end" fill="#171717" font-family="Arial">40 km</text>
+  </g>
+
+  <!-- Fonte e autor -->
+  <text x="70" y="870" font-size="11" fill="#5a6270" font-family="Arial, sans-serif">Fonte dos dados: [inserir fonte]  |  Datum: WGS84  |  Projeção: [zona UTM]</text>
+  <text x="70" y="888" font-size="11" fill="#5a6270" font-family="Arial, sans-serif">Elaborado por: [nome do autor]  —  [mês/ano]</text>
+</svg>

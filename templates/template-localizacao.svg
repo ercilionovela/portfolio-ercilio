@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="1130" viewBox="0 0 800 1130" font-family="Georgia, 'Times New Roman', serif">
+  <!-- Modelo: Mapa de Localização (A4 vertical) -->
+  <rect width="800" height="1130" fill="#faf9f7"/>
+  <rect x="30" y="30" width="740" height="1020" fill="#ffffff" stroke="#0f2844" stroke-width="3"/>
+  <rect x="42" y="42" width="716" height="996" fill="none" stroke="#0f2844" stroke-width="1"/>
+
+  <text x="400" y="105" text-anchor="middle" font-size="34" font-weight="bold" fill="#0f2844" letter-spacing="2">MAPA DE LOCALIZAÇÃO</text>
+  <line x1="200" y1="125" x2="600" y2="125" stroke="#b47a3d" stroke-width="3"/>
+  <text x="400" y="155" text-anchor="middle" font-size="15" fill="#5a6270">Distrito de Sussundenga — Província de Manica</text>
+
+  <!-- Área do mapa principal -->
+  <rect x="60" y="190" width="540" height="640" fill="#e8e4de" stroke="#0f2844" stroke-width="2"/>
+  <path d="M60 190 L600 190 L600 830 L60 830 Z M240 320 L470 300 L510 560 L300 640 L200 540 Z" fill="#ffffff" fill-rule="evenodd" stroke="#1e3a5f" stroke-width="1.5"/>
+  <path d="M60 520 Q200 480 340 520 T600 500" fill="none" stroke="#1e3a5f" stroke-width="2"/>
+  <rect x="70" y="200" width="520" height="620" fill="none" stroke="#0f2844" stroke-width="1" stroke-dasharray="4 4"/>
+
+  <!-- Sede do distrito -->
+  <circle cx="360" cy="470" r="9" fill="#b47a3d" stroke="#0f2844" stroke-width="2"/>
+  <text x="376" y="466" font-size="14" font-weight="bold" fill="#0f2844">Sede do distrito</text>
+
+  <!-- Localizador (mini-mapa do país) -->
+  <rect x="615" y="190" width="150" height="200" fill="#ffffff" stroke="#0f2844" stroke-width="1.5"/>
+  <text x="690" y="212" text-anchor="middle" font-size="12" font-weight="bold" fill="#0f2844">MOÇAMBIQUE</text>
+  <path d="M640 240 L740 230 L745 330 L700 370 L650 350 Z" fill="#e8e4de" stroke="#5a6270" stroke-width="1"/>
+  <rect x="668" y="270" width="26" height="30" fill="#b47a3d"/>
+
+  <!-- Rosa dos ventos -->
+  <g transform="translate(690,500)">
+    <circle r="34" fill="#ffffff" stroke="#0f2844" stroke-width="1.5"/>
+    <path d="M0 -28 L7 0 L0 8 L-7 0 Z" fill="#0f2844"/>
+    <path d="M0 28 L7 0 L0 -8 L-7 0 Z" fill="#b47a3d" opacity="0.7"/>
+    <text y="-40" text-anchor="middle" font-size="16" font-weight="bold" fill="#0f2844">N</text>
+  </g>
+
+  <!-- Legenda -->
+  <rect x="615" y="560" width="150" height="230" fill="#ffffff" stroke="#0f2844" stroke-width="1.5"/>
+  <rect x="615" y="560" width="150" height="30" fill="#0f2844"/>
+  <text x="690" y="580" text-anchor="middle" font-size="13" font-weight="bold" fill="#ffffff">LEGENDA</text>
+  <rect x="627" y="608" width="22" height="14" fill="#b47a3d"/>
+  <text x="657" y="620" font-size="11" fill="#171717">Sede/distrito</text>
+  <rect x="627" y="638" width="22" height="14" fill="#ffffff" stroke="#1e3a5f"/>
+  <text x="657" y="650" font-size="11" fill="#171717">Unidade territorial</text>
+  <line x1="627" y1="675" x2="649" y2="675" stroke="#1e3a5f" stroke-width="2"/>
+  <text x="657" y="679" font-size="11" fill="#171717">Curso de água</text>
+  <line x1="627" y1="700" x2="649" y2="700" stroke="#0f2844" stroke-width="1" stroke-dasharray="4 3"/>
+  <text x="657" y="704" font-size="11" fill="#171717">Limite administrativo</text>
+
+  <!-- Escala gráfica -->
+  <g transform="translate(615,860)">
+    <rect width="35" height="8" fill="#0f2844"/>
+    <rect x="35" width="35" height="8" fill="#ffffff" stroke="#0f2844"/>
+    <rect x="70" width="35" height="8" fill="#0f2844"/>
+    <rect x="105" width="25" height="8" fill="#ffffff" stroke="#0f2844"/>
+    <text y="24" font-size="11" fill="#171717">0</text>
+    <text x="128" y="24" font-size="11" text-anchor="end" fill="#171717">50 km</text>
+  </g>
+
+  <!-- Fonte de dados -->
+  <text x="60" y="880" font-size="11" fill="#5a6270" font-family="Arial, sans-serif">Fonte dos dados: [inserir fonte]  |  Datum: WGS84  |  Projeção: UTM zona 36S</text>
+  <text x="60" y="898" font-size="11" fill="#5a6270" font-family="Arial, sans-serif">Elaborado por: [nome do autor]  —  [mês/ano]</text>
+</svg>
